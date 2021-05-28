@@ -10,7 +10,7 @@ Si no te aparece en tu idioma, puedes cambiarlo pulsando el icono del engraje ar
 ## IDE/Entorno de programación
 
 
-![](./images/IDE-makeblock_texto.png)
+![](./images/IDE-makecode_texto.png)
 
 Simulador |  Paletas | lienzo
 
