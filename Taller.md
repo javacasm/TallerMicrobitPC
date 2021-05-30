@@ -2,9 +2,6 @@
 
 Vamos a programar nuestra micro:bit con bloques usando el editor de  [Makecode](https://makecode.microbit.org)
 
-Si no te aparece en tu idioma, puedes cambiarlo pulsando el icono del engraje arriba a la derecha y seleccionar el idioma que prefieras
-
-![](./images/SelecionarIdioma.png)
 
 
 ## IDE/Entorno de programación
@@ -12,46 +9,77 @@ Si no te aparece en tu idioma, puedes cambiarlo pulsando el icono del engraje ar
 
 ![](./images/IDE-makecode_texto.png)
 
-Simulador |  Paletas | lienzo
+1. Paletas con los bloques de programación. Las paletas tienen un color determinado, igual que los bloques que contienen.
+2. Tapete/Lienzo: donde arrastramos los bloques de nuestro programa
+3. Simulador: va ejecutando el programa que hemos hecho
+4. Botón deshacer
+5. Botones de Zoom para ampliar/achicar
+6. Configuración. Podemos selecciona el idioma
+7. Nombre de nuestro programa
 
+Si no te aparece en tu idioma, puedes cambiarlo pulsando el icono del engraje arriba a la derecha y seleccionar el idioma que prefieras
 
+![](./images/SelecionarIdioma.png)
 
+## Mostrando iconos
+
+Hemos visto que nuestra micro:bit tiene 25 leds (5x5) en la parte delantera. Vamos a mostrar iconos.
+
+Arrastraremos 2 bloques "Mostrar icono" desde la paleta Básico (1) al Tapete (2)
 
 ![](./images/PrimerProyectoIconos.png)
 
 [Primer Proyecto: iconos](https://makecode.microbit.org/_E3Pe8zJRaXVg)
 
-
-
-Damos nombre a nuestro programa
+Damos nombre a nuestro programa: "Emoticono" escribiéndolo en la caja del nombre (7)
 
 ![](./images/NombrPrograma.png)
 
+Veremos como se muestran los iconos en el Simulador (3)
 
+Ahora vamos a pasar nuestro programa a la micro:bit:
 
-
-Simulador
-
-Descargamos y copiamos a la unidad Microbit
+1. Conectamos la micro:bit por USB. 
+1. Veremos que aparece en el ordenador como si hubiéramos contectado un USB llamado "Microbit"
+1. Descargamos el programa pulsando el botón "Descargar"
+1. Copiamos el fichero a la unidad llamada Microbit
 
 ![](./images/CopiarFicheroHex.png)
 
 
 ## Haciendo ruído
 
+Vamos a hacer música, usando los bloques de la paleta "Música". 
+La placa micro:bit incluye muchos sensores, vamos a usar uno de ellos, el acelerómetro, que detecta cuando la movemos.
+
+Vamos a arrastrar desde la paleta "Entrada" el bloque "si agitado" y dentro el bloque "play melody" desde la paleta "Música"
+
 ![](./images/Musica.png)
 
 [Música](https://makecode.microbit.org/_Rsfe6X6vMED1)
 
-Vemos que el simulador nos indica que hace falta conectar unos cascos/altavoces
+Vemos que el simulador nos indica que hace falta conectar unos cascos/altavoces. Si acercamos el ratón al simulador veremos que se mueve la placa ¡Podemos simular que la agitamos! Es un simulador muy completo.
+El simulador sonará al mover el ratón sobre la placa.
 
-Usaremos el Kit de de MonkMakes
+Ahora descargamos el programa como antes. Si tenemos una micro:bit v2 sonará al agitarla.
+
+La versión 1 de la placa micro:bit no tiene altavoz y no sonará nuestro programa, por ello vamos a conectar un altavoz. Usaremos el [Kit de Iniciación a la electrónica de MonkMakes](http://www.monkmakes.com/mb_kit_es)
 
 ![](./images/in_box_read_web.jpg)
 
 
+
+Usaremos 3 cables de pinzas cocodrilo para conectar el altavoz/Speaker y la micro:bit. Podemos usar cables de cualquier color, pero es mejor seguir un esquema, conectando:
+
+micro:bit| Speaker | cable
+---|---|---
+GND | GND |cable negro
+3V| 3V | cable rojo
+0|IN| cable amarillo
+
 ![](./images/microbit-altavoz2.jpg)
 
+Veremos cómo suena:
 
 [![Vídeo: Reproduciendo música al agitar micro:bit](https://img.youtube.com/vi/VwGuElgN2t8/0.jpg)](https://youtu.be/VwGuElgN2t8)
 
@@ -60,41 +88,87 @@ Usaremos el Kit de de MonkMakes
 
 ## Controlando corrientes y potencia externa: interruptor electrónico
 
-Circuito eléctrico bombilla
+Vamos a empezar haciendo un sencillo circuito eléctrico con la bombilla, la pila y algunos cables:
 
 ![](./images/circuitoBombilla1.jpg)
 
 
-Ponemos un interuptor hecho con cables
+Al conectarlo se encenderá la bombilla.
+
+Ahora vamos a hacer un sencillo interuptor hecho con cables. Sustituiremos el cable verde por 2 cables verdes. 
 
 ![](./images/circuitoBombillaInterruptor.jpg)
 
+Cuando juntemos los cables verdes se cerrará el circuito y se encenderá la bombilla.
 
-
-
-Insertamos un **Relé** (interruptor electrónico)
+Ahora vamos a insertar interruptor electrónico, un **Relé/Relay** que podremos controlar desde la programación de la micro:bit.
+Conectaremos los 2 cables verdes en la salidas **OUT** de la placa del relé. No importa cuál pongamos en cada una:
 
 ![](./images/circuitoBombillaRele.jpg)
 
+El relé nos permite contolar más potencia que lo que puede hacer la micro:bit directamente.
 
-Conectamos la microbit y hacemos el programa para encender y apagar con los botones A y B
+Usaremos 2 cables para conectar el Relé a la micro:bit
 
-![](./images/circuitoBombillaRelemicrobit.jpg)
+micro:bit| Relay| cable
+---|---|---
+GND | GND |cable negro
+1| IN | cable blanco
 
+Vamos a hacer un programa para encender y apagar con los botones A y B. 
 
-![](./images/circuitoBombillaRelemicrobit2.jpg)
+* Cuando pulsemos el botón A encenderemos la salida P1 de la micro:bit
+* Cuando pulsemos el botón B apagaremos la salida P1 de la micro:bit
 
-Si queremos controlar un motor/ventilador en lugar de la bombilla, sólo tenemos que cambiar la bombilla por el motor 
-
+Usamores el bloque "Al pulsar el botón A" de la paleta "Entrada" y "escritura digital pin P1" desde la paleta "Pines" de "Avanzados". Seleccionamos "P1" y ponemos "1" para encender y "0" para apagar:
 
 ![](./images/Musica-Ventilador.png)
 
-[Música + Ventildor](https://makecode.microbit.org/_9cCRiFb7C2ys)
+[Música + Luz](https://makecode.microbit.org/_9cCRiFb7C2ys)
+
+
+![](./images/circuitoBombillaRelemicrobit.jpg)
+
+* Descargamos el programa a la placa
+* Pulsamos el botón A y se encenderá la bombilla
+* Pulsamos el botón B y se apagará
+
+Si queremos controlar un motor/ventilador en lugar de la bombilla, sólo tenemos que sustituir la bombilla por el motor. Al cambiarlo tendremos un ventilador controlado desde un micro:bit.
+
+Podemos invertir el sentido de giro del ventilador, cambiando entre sí los cables del motor.
+
+## Termostato
+
+Otro de los sensores que incluye la micro:bit es el sensor de temperatura, situado en la parte de atrás:
+
+![](./images/thermometer.png)
+
+Podemos encontrar el valor de la temperatura de la placa en la paleta "Entrada".
+
+Un termostado es un aparato que hace algo cuando la temperatura es mayor que un valor y otra cosa cuando sea menor.
+
+Para ello vamos a usar  el bloque "Si ... entonoces si no" y el bloque hexagonal "operador  >" ambos de la paleta "Lógica" 
+
+* Ponemos el bloque "Si ... entonces si no" dentro del bloque "para siempre" porque necesitamos que se esté revisando siempre esta condición
+* Añadimos el bloque hexagonal "operador >"  en la parte de la condición
+* En un lado del operador ponemos el valor de la temperatura, de la paleta "Entrada"
+* Ponemos en el otro lado el valor de la temperatura que usaremos, por ejemplo 25.
+* En caso de que la temperatura sea mayor encenderemos el ventilador con el bloque "escritura digital pin P1" a 1
+* En "si no " apagaremos el ventilador con el bloque "escritura digital pin P1" a 0
 
 
 ![](./images/Musica-Ventilador-Termostato.png)
 
+
 [Proyecto: Música, Ventilador y termostato](https://makecode.microbit.org/_DzJHtaPoT4dT)
+
+Para probarlo:
+
+* Descargarmos el programa
+* Tocamos el sensor de temperatura para calentarlo
+* Se encenderá el ventilador
+* Apuntamos el ventilador hacia el sensor, para enfriarlo
+* El ventilador se apaga
 
 [![Vídeo: Ventilador controlado con termostato usando micro:bit](https://img.youtube.com/vi/9PxjRF-k8-g/0.jpg)](https://youtu.be/9PxjRF-k8-g)
 

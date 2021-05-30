@@ -28,6 +28,6 @@ y el [Kit de Iniciación a la electrónica de MonkMakes](http://www.monkmakes.co
 
 ![](./images/in_box_read_web.jpg)
 
-## [¿Qué es microbit?](./QueEsMicrobit.md)
+## [¿Qué es micro:bit?](./QueEsMicrobit.md)
 
 ## [Programando micro:bit con MakeCode](./Taller.md)
