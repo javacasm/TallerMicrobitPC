@@ -42,10 +42,32 @@ Ahora vamos a pasar nuestro programa a la micro:bit:
 1. Conectamos la micro:bit por USB. 
 1. Veremos que aparece en el ordenador como si hubiéramos conectado un USB llamado "Microbit"
 1. Descargamos el programa pulsando el botón "Descargar"
+![](./images/installGuadalinex5.png)
 1. Copiamos el fichero a la unidad llamada Microbit
+
+En un ordenador con Windows
 
 ![](./images/CopiarFicheroHex.png)
 
+En un ordenador con Linux/Guadalinex, al pulsar Descargar:
+
+![](./images/installGuadalinex6.png)
+Seleccionamos "Guardar archivo"
+
+
+Al conectar la micro:bit nos aparecerá una nueva unidad llamada "MICROBIT"
+
+![](./images/installGuadalinex4.png)
+
+Pulsamos en Lugares
+
+![](./images/installGuadalinex3.png)
+
+Seleccionamos Descargas
+
+![](./images/installGuadalinex1.png)
+
+Copiamos el fichero descargado a la unidad "MICROBIT"
 
 ## Haciendo ruído
 
