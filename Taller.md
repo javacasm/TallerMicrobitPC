@@ -14,10 +14,10 @@ Vamos a programar nuestra micro:bit con bloques usando el editor de  [Makecode](
 3. Simulador: va ejecutando el programa que hemos hecho
 4. Botón deshacer
 5. Botones de Zoom para ampliar/achicar
-6. Configuración. Podemos selecciona el idioma
+6. Configuración. Podemos seleccionar el idioma
 7. Nombre de nuestro programa
 
-Si no te aparece en tu idioma, puedes cambiarlo pulsando el icono del engraje arriba a la derecha y seleccionar el idioma que prefieras
+Si no te aparece en tu idioma, puedes cambiarlo pulsando el icono del engranaje arriba a la derecha y seleccionar el idioma que prefieras
 
 ![](./images/SelecionarIdioma.png)
 
@@ -31,7 +31,7 @@ Arrastraremos 2 bloques "Mostrar icono" desde la paleta Básico (1) al Tapete (2
 
 [Primer Proyecto: iconos](https://makecode.microbit.org/_E3Pe8zJRaXVg)
 
-Damos nombre a nuestro programa: "Emoticono" escribiéndolo en la caja del nombre (7)
+Damos nombre a nuestro programa "Emoticono" escribiéndolo en la caja del nombre (7)
 
 ![](./images/NombrPrograma.png)
 
@@ -40,7 +40,7 @@ Veremos como se muestran los iconos en el Simulador (3)
 Ahora vamos a pasar nuestro programa a la micro:bit:
 
 1. Conectamos la micro:bit por USB. 
-1. Veremos que aparece en el ordenador como si hubiéramos contectado un USB llamado "Microbit"
+1. Veremos que aparece en el ordenador como si hubiéramos conectado un USB llamado "Microbit"
 1. Descargamos el programa pulsando el botón "Descargar"
 1. Copiamos el fichero a la unidad llamada Microbit
 
@@ -95,7 +95,7 @@ Vamos a empezar haciendo un sencillo circuito eléctrico con la bombilla, la pil
 
 Al conectarlo se encenderá la bombilla.
 
-Ahora vamos a hacer un sencillo interuptor hecho con cables. Sustituiremos el cable verde por 2 cables verdes. 
+Ahora vamos a hacer un sencillo interruptor hecho con cables. Sustituiremos el cable verde por 2 cables verdes. 
 
 ![](./images/circuitoBombillaInterruptor.jpg)
 
@@ -106,7 +106,7 @@ Conectaremos los 2 cables verdes en la salidas **OUT** de la placa del relé. No
 
 ![](./images/circuitoBombillaRele.jpg)
 
-El relé nos permite contolar más potencia que lo que puede hacer la micro:bit directamente.
+El relé nos permite controlar más potencia que lo que puede hacer la micro:bit directamente.
 
 Usaremos 2 cables para conectar el Relé a la micro:bit
 
@@ -120,7 +120,7 @@ Vamos a hacer un programa para encender y apagar con los botones A y B.
 * Cuando pulsemos el botón A encenderemos la salida P1 de la micro:bit
 * Cuando pulsemos el botón B apagaremos la salida P1 de la micro:bit
 
-Usamores el bloque "Al pulsar el botón A" de la paleta "Entrada" y "escritura digital pin P1" desde la paleta "Pines" de "Avanzados". Seleccionamos "P1" y ponemos "1" para encender y "0" para apagar:
+Usaremos el bloque "Al pulsar el botón A" de la paleta "Entrada" y "escritura digital pin P1" desde la paleta "Pines" de "Avanzados". Seleccionamos "P1" y ponemos "1" para encender y "0" para apagar:
 
 ![](./images/Musica-Ventilador.png)
 
@@ -135,6 +135,8 @@ Usamores el bloque "Al pulsar el botón A" de la paleta "Entrada" y "escritura d
 
 Si queremos controlar un motor/ventilador en lugar de la bombilla, sólo tenemos que sustituir la bombilla por el motor. Al cambiarlo tendremos un ventilador controlado desde un micro:bit.
 
+![Circuito para controlar un motor/ventilador](./images/circuitoVentiladorRelemicrobit.jpg)
+
 Podemos invertir el sentido de giro del ventilador, cambiando entre sí los cables del motor.
 
 ## Termostato
@@ -145,9 +147,9 @@ Otro de los sensores que incluye la micro:bit es el sensor de temperatura, situa
 
 Podemos encontrar el valor de la temperatura de la placa en la paleta "Entrada".
 
-Un termostado es un aparato que hace algo cuando la temperatura es mayor que un valor y otra cosa cuando sea menor.
+Un termostato es un aparato que hace algo cuando la temperatura es mayor que un valor y otra cosa cuando sea menor.
 
-Para ello vamos a usar  el bloque "Si ... entonoces si no" y el bloque hexagonal "operador  >" ambos de la paleta "Lógica" 
+Para ello vamos a usar  el bloque "Si ... entonces si no" y el bloque hexagonal "operador  >" ambos de la paleta "Lógica" 
 
 * Ponemos el bloque "Si ... entonces si no" dentro del bloque "para siempre" porque necesitamos que se esté revisando siempre esta condición
 * Añadimos el bloque hexagonal "operador >"  en la parte de la condición
@@ -164,7 +166,7 @@ Para ello vamos a usar  el bloque "Si ... entonoces si no" y el bloque hexagonal
 
 Para probarlo:
 
-* Descargarmos el programa
+* Descargamos el programa
 * Tocamos el sensor de temperatura para calentarlo
 * Se encenderá el ventilador
 * Apuntamos el ventilador hacia el sensor, para enfriarlo
